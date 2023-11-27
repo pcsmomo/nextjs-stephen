@@ -50,4 +50,19 @@ npx create-next-app@latest
 cd 01-corp
 ```
 
+### 3. File-Based Routing
+
+```sh
+# 01-corp
+npm run dev
+```
+
+`page.tsx` is in controls the route
+
+- src
+  - app
+    - performance
+      - page.tsx
+    - page.tsx
+
 </details>
