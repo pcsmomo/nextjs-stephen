@@ -1,6 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
 // import HomeImg from "@public/home.jpg";
-import HomeImg from "public/home.jpg";
+import HomeImg from 'public/home.jpg';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
           src={HomeImg}
           alt="car factory"
           fill
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>
