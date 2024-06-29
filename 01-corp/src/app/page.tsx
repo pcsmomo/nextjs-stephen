@@ -14,6 +14,10 @@ export default function Home() {
           style={{ objectFit: 'cover' }}
         />
       </div>
+      {/* <div className="flex flex-row">
+        <Image height={800} width={600} src={HomeImg} alt="car asdf" />
+        <div>Buy our product</div>
+      </div> */}
     </div>
   );
 }
