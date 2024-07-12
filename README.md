@@ -90,4 +90,23 @@ Auto-detected Project Settings (Next.js):
 💡  To change the domain or build command, go to https://vercel.com/noahs-projects-b7634d53/01-corp/settings
 ```
 
+## Section 2: Changing Data with Mutations
+
+### 17. App Overview
+
+```sh
+% npx create-next-app@latest
+Need to install the following packages:
+create-next-app@14.2.5
+Ok to proceed? (y)
+
+✔ What is your project named? … 02-snippets
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+```
+
 </details>
