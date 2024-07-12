@@ -65,4 +65,29 @@ npm run dev
       - page.tsx
     - page.tsx
 
+### 14. Production Deployment with Vercel
+
+```sh
+# under 01-copr folder
+./01-corp % npx vercel
+Vercel CLI 34.3.1
+? Set up and deploy “~/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/01-corp”? yes
+? Which scope do you want to deploy to? Noah's projects
+? Link to existing project? no
+? What’s your project’s name? 01-corp
+? In which directory is your code located? ./
+Local settings detected in vercel.json:
+Auto-detected Project Settings (Next.js):
+- Build Command: next build
+- Development Command: next dev --port $PORT
+- Install Command: `yarn install`, `pnpm install`, `npm install`, or `bun install`
+- Output Directory: Next.js default
+? Want to modify these settings? no
+🔗  Linked to noahs-projects-b7634d53/01-corp (created .vercel)
+🔍  Inspect: https://vercel.com/noahs-projects-b7634d53/01-corp/AyWzz27pbAscWKdswG3ZU5Rfo6Qp [2s]
+✅  Production: https://01-corp-jcvuqj6ll-noahs-projects-b7634d53.vercel.app [2s]
+📝  Deployed to production. Run `vercel --prod` to overwrite later (https://vercel.link/2F).
+💡  To change the domain or build command, go to https://vercel.com/noahs-projects-b7634d53/01-corp/settings
+```
+
 </details>
