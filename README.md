@@ -109,4 +109,11 @@ Ok to proceed? (y)
 ✔ Would you like to customize the default import alias (@/*)? … No / Yes
 ```
 
+### 18. Project Setup
+
+```sh
+./02-snippets % npm install prisma
+./02-snippets % npx prisma init --datasource-provider sqlite
+```
+
 </details>
