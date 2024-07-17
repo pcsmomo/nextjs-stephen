@@ -150,4 +150,14 @@ found 0 vulnerabilities
 ✔ Generated Prisma Client (v5.16.2) to ./node_modules/@prisma/client in 34ms
 ```
 
+### 19. Adding a Create Page
+
+#### Creating Records
+
+1. Create a prisma client to access our database
+2. Create a form in SnippetCreatePage
+3. Define a Server Action. This is a function that will be called when the form is submitted
+4. In the Server Action, validate the users input than create a new snippet
+5. Redirect the user to the Home Page, which lists all the snippets
+
 </details>
