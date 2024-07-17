@@ -116,4 +116,38 @@ Ok to proceed? (y)
 ./02-snippets % npx prisma init --datasource-provider sqlite
 ```
 
+#### migrate prisma (after adding model to `schema.prisma`)
+
+```sh
+./02-snippets % npx prisma migrate dev
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+
+SQLite database dev.db created at file:./dev.db
+
+✔ Enter a name for the new migration: … add snippets
+Applying migration `20240712234646_add_snippets`
+
+The following migration(s) have been created and applied from new schema changes:
+
+migrations/
+  └─ 20240712234646_add_snippets/
+    └─ migration.sql
+
+Your database is now in sync with your schema.
+
+Running generate... (Use --skip-generate to skip the generators)
+
+added 1 package, and audited 370 packages in 6s
+
+137 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+✔ Generated Prisma Client (v5.16.2) to ./node_modules/@prisma/client in 34ms
+```
+
 </details>
