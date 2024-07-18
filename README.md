@@ -170,9 +170,18 @@ found 0 vulnerabilities
 
 #### Client Components
 
-- Created by adding `use client` at the very top of the file
+- Created by adding 'use client' at the very top of the file
 - Have all the usual rules of components
 - Can use hooks, event handlers, etc
 - Can not directly show a Server Component (there is one exception)
+
+### 25. Fetching Data with Server Components
+
+Fethcing Data
+
+1. Create a server component - a component that doesn't have 'use client' at the top
+2. Mark the component as 'async'
+3. Make an HTTP requests or directly access a database to get your data
+4. Render your data directly, or pass it to a child component
 
 </details>
