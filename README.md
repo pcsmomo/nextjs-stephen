@@ -160,4 +160,19 @@ found 0 vulnerabilities
 4. In the Server Action, validate the users input than create a new snippet
 5. Redirect the user to the Home Page, which lists all the snippets
 
+### 24. Server Components vs Client Components
+
+#### Server Components
+
+- Default component in next js is basically server componente
+- Can not use any kind of hook
+- Can not assign any event handlers
+
+#### Client Components
+
+- Created by adding `use client` at the very top of the file
+- Have all the usual rules of components
+- Can use hooks, event handlers, etc
+- Can not directly show a Server Component (there is one exception)
+
 </details>
