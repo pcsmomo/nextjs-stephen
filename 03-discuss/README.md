@@ -42,3 +42,29 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ```sh
 npx prisma migrate dev
 ```
+
+## Dependencies
+
+### In the lecture
+
+- nextjs@14.0.2
+- @nextui-org/react@2.2.9
+- @auth/core@0.18.1
+- @auth/prisma-adapter@1.0.6
+- next-auth@5.0.0-beta.3
+
+### Latest
+
+- nextjs@14.2.5
+- @nextui-org/react@2.4.6
+- @auth/core@0.34.1
+- @auth/prisma-adapter@2.4.1
+- next-auth@5.0.0-beta.19
+
+### I have installed
+
+- nextjs@14.2.5
+- @nextui-org/react@2.4.6
+- @auth/core@0.18.1
+- @auth/prisma-adapter@1.0.6
+- next-auth@5.0.0-beta.3

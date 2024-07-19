@@ -377,10 +377,8 @@ It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
 
 ### 53. Project Overview
 
-```sh
-% npx create-next-app@latest
+`% npx create-next-app@latest`
 ✔ What is your project named? … 03-discuss
-```
 
 ### 54. Critical Libraries in Our Project
 
@@ -388,6 +386,8 @@ It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
 - next-auth / authjs
 - Github OAuth
 - Prisma -> SQLite
+
+#### [Dependency versions](./03-discuss/README.md#dependencies)
 
 ### 55. NextUI Installation and Setup
 
@@ -430,6 +430,42 @@ copy prisma schema to ./prisma/schema.prisma
 # Running generate... (Use --skip-generate to skip the generators)
 
 # ✔ Generated Prisma Client (v5.17.0) to ./node_modules/@prisma/client in 71ms
+```
+
+### 58. OAuth Setup
+
+Auth Setup
+
+1. Create an OAuth app and generate a client_id and client_secret
+   - github.com/settings/applications/new
+2. add AUTH_SECRET, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET to a `.env.local` file
+3. install these packages
+   - @auth/core@0.18.1 (latest is 0.34.1)
+   - @auth/prisma-adapter@1.0.6 (latest is 2.4.1)
+   - next-auth@5.0.0-beta.3 (latest is 5.0.0-beta.19)
+4. Make a `auth.ts` file in the `src` folder. Set up NextAuth and the PrismaAdapter in there
+5. Set up the `app/api/auth/[...nextauth]/route.ts` file to handle the requests between Githubs servers and ours
+6. Make server actions to signin/signout the user (Optional, but highly recommended)
+
+#### 1. Create an OAuth app in github
+
+[Github -> Settings -> Developer Settings -> OAuth Apps](https://github.com/settings/applications/new)
+
+- Application name: DEV Discuss
+- Homepage URL: http://localhost:3000
+- Authorization callback URL: http://localhost:3000/api/auth/callback/github
+
+- Generate a new client secret
+
+#### 2. Set the environment variables
+
+- Create `.env.local` file and add GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET
+- AUTH_SECRET is just arbitrary strings
+
+#### 3. install dependencies
+
+```sh
+npm install --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@5.0.0-beta.3
 ```
 
 </details>
