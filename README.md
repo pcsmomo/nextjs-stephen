@@ -10,6 +10,7 @@ Next JS: The Complete Developer's Guide by Stephen Grider
   - Section 2: Changing Data with Mutations
   - Section 3: Streaming Content with React Server Components
   - Section 4: Server Actions in Great Detail
+  - Section 5: Server Forms with the UseFormState Hook
 
 # Details
 
@@ -252,5 +253,18 @@ Special File Names in the 'app' Folder
   - No messing around with `bind` function
   - Closer to classic React behavior
   - (Stephen seems to prefer this approach though)
+
+## Section 5: Server Forms with the UseFormState Hook
+
+### 41. Understanding the UseFormState Hook
+
+Error Handling with Server Actions
+
+- Remember, a big point of forms is taht they can work without JS in the browser
+- Right now, forms in our pages are sending info to a server action
+- We need to somehow communicate info from a server action back to a page
+- `React-dom` (not react) contains a hook called `useFormState` specifically for this
+
+#### useFormState can be used in only Client Component
 
 </details>
