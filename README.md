@@ -189,4 +189,19 @@ Fethcing Data
 3. Make an HTTP requests or directly access a database to get your data
 4. Render your data directly, or pass it to a child component
 
+### 28. Custom Not Found Pages
+
+[Next js: File Conventions](https://nextjs.org/docs/app/api-reference/file-conventions)
+
+Special File Names in the 'app' Folder
+
+| Name          | Purpose                                                                            |
+| ------------- | ---------------------------------------------------------------------------------- |
+| page.tsx      | Displays the primary content for the page                                          |
+| layout.tsx    | Wraps up the currently displayed page. Use to show content common aross many pages |
+| not-found.tsx | Displayed when we call the 'notFound' function                                     |
+| loading.tsx   | Displayed when a server component is fetching some data                            |
+| error.tsx     | Displayed when an error occurs in a server component                               |
+| route.tsx     | Defineds API endpoints                                                             |
+
 </details>
