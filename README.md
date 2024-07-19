@@ -203,7 +203,7 @@ Special File Names in the 'app' Folder
 | layout.tsx    | Wraps up the currently displayed page. Use to show content common aross many pages |
 | not-found.tsx | Displayed when we call the 'notFound' function                                     |
 | loading.tsx   | Displayed when a server component is fetching some data                            |
-| error.tsx     | Displayed when an error occurs in a server component                               |
+| error.tsx     | Displayed when an error occurs in a server component (must be client component)    |
 | route.tsx     | Defineds API endpoints                                                             |
 
 ### 34. Adding the Monaco Editor
@@ -266,5 +266,9 @@ Error Handling with Server Actions
 - `React-dom` (not react) contains a hook called `useFormState` specifically for this
 
 #### useFormState can be used in only Client Component
+
+### 44. Gotchas Around Error Handling
+
+`error.tsx` must be a client component
 
 </details>
