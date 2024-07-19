@@ -380,7 +380,13 @@ It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
 ```sh
 % npx create-next-app@latest
 ✔ What is your project named? … 03-discuss
-
 ```
+
+### 54. Critical Libraries in Our Project
+
+- nextui
+- next-auth / authjs
+- Github OAuth
+- Prisma -> SQLite
 
 </details>
