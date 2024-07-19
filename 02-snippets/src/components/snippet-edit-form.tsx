@@ -1,10 +1,16 @@
 'use client';
 
+import { useState } from 'react';
+
 // prisma provices a type for the Snippet model
 import type { Snippet } from '@prisma/client';
 
+// components
 import Editor from '@monaco-editor/react';
-import { useState } from 'react';
+
+// actions
+// import { editSnippet } from '@/actions';
+import * as actions from '@/actions';
 
 interface SnippetEditFormProps {
   snippet: any;
@@ -15,10 +21,6 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
   const handleEditorChange = (value: string = '') => {
     setCode(value);
   };
-
-  async function editSnippet() {
-    'use server';
-  }
 
   return (
     <div>
