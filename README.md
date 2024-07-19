@@ -9,6 +9,7 @@ Next JS: The Complete Developer's Guide by Stephen Grider
 - 02-snippets
   - Section 2: Changing Data with Mutations
   - Section 3: Streaming Content with React Server Components
+  - Section 4: Server Actions in Great Detail
 
 # Details
 
@@ -178,7 +179,7 @@ found 0 vulnerabilities
 - Created by adding 'use client' at the very top of the file
 - Have all the usual rules of components
 - Can use hooks, event handlers, etc
-- Can not directly show a Server Component (there is one exception)
+- [Can not directly show a Server Component (there is one exception)](#36-server-actions-in-client-components)
 
 ### 25. Fetching Data with Server Components
 
@@ -209,5 +210,12 @@ Special File Names in the 'app' Folder
 ```sh
 02-snippets % npm install @monaco-editor/react
 ```
+
+## Section 4: Server Actions in Great Detail
+
+### 36. Server Actions in Client Components
+
+- Option #1. Define the Server Action in a _Server Component_ and pass it as props to the Client Component
+- ✅ Option #2. Define the Server Action in a _separate file_ and import it into the Client Component
 
 </details>
