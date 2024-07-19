@@ -468,4 +468,8 @@ Auth Setup
 npm install --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@5.0.0-beta.3
 ```
 
+### 59. Next-Auth Setup
+
+#### 4. `./src/auth.ts`
+
 </details>
