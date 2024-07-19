@@ -218,4 +218,39 @@ Special File Names in the 'app' Folder
 - Option #1. Define the Server Action in a _Server Component_ and pass it as props to the Client Component
 - ✅ Option #2. Define the Server Action in a _separate file_ and import it into the Client Component
 
+### 38. Options for Calling Server Actions from Client Components
+
+- Option #1. Use <form> action with `bind` function to customize the arguments
+
+  ```js
+  'use client';
+  const editSnippetAction = actions.editSnippet.bind(null, code);
+  return <form action={editSnippetAction}></form>;
+  ```
+
+  ```js
+  'use server';
+  export async function editSnippet(code: string, formData: FormData) {}
+  ```
+
+  - Form will work even if the user isn't running Javascript in their browser. (pointless in this case since our form requires JS for the monaco editor)
+  - We will go with this Option #1 because many Next Js documents guide this approach
+
+- Option #2. Not tied to a `form`
+  ```js
+  const handleClick = () => {
+    React.startTransition(async () => {
+      await actions.editSnippet(code);
+    });
+  };
+  return <button onClick={handleClick}>Submit</button>;
+  ```
+  ```js
+  'use server';
+  export async function editSnippet(code: string) {}
+  ```
+  - No messing around with `bind` function
+  - Closer to classic React behavior
+  - (Stephen seems to prefer this approach though)
+
 </details>
