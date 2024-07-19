@@ -399,4 +399,37 @@ It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
 npm install @nextui-org/react framer-motion
 ```
 
+### 56. Prisma Schema File
+
+```sh
+03-discuss % npm install prisma
+03-discuss % npx prisma init --datasource-provider sqlite
+```
+
+copy prisma schema to ./prisma/schema.prisma
+
+```sh
+03-discuss % npx prisma migrate dev
+# Environment variables loaded from .env
+# Prisma schema loaded from prisma/schema.prisma
+# Datasource "db": SQLite database "dev.db" at "file:./dev.db"
+
+# SQLite database dev.db created at file:./dev.db
+
+# ✔ Enter a name for the new migration: … init
+# Applying migration `20240719192904_init`
+
+# The following migration(s) have been created and applied from new schema changes:
+
+# migrations/
+#   └─ 20240719192904_init/
+#     └─ migration.sql
+
+# Your database is now in sync with your schema.
+
+# Running generate... (Use --skip-generate to skip the generators)
+
+# ✔ Generated Prisma Client (v5.17.0) to ./node_modules/@prisma/client in 71ms
+```
+
 </details>
