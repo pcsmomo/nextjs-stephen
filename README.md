@@ -216,8 +216,8 @@ Special File Names in the 'app' Folder
 
 ### 36. Server Actions in Client Components
 
-- Option #1. Define the Server Action in a _Server Component_ and pass it as props to the Client Component
-- ✅ Option #2. Define the Server Action in a _separate file_ and import it into the Client Component
+- Option #1. Define the Server Action in a **Server Component** and pass it as props to the Client Component
+- ✅ Option #2. Define the Server Action in a **separate file** and import it into the Client Component
 
 ### 38. Options for Calling Server Actions from Client Components
 
@@ -281,5 +281,16 @@ Error Handling with Server Actions
 ```
 
 Add a new snippet but after refreshing the new data doesn't appeal
+
+### 46. The Full Route Cache System
+
+#### Caching
+
+Next implements caching in several locations. Can lead to unexpected behavior
+
+- Data Cache: Responses from requests made with `fetch` are stored and used across requests.
+- Router Cache: `Soft` navigation between routes are cached in the browser and reused when a user revisits a page.
+- Request Memoization: Make two or more `GET` requests with `fetch` during a user's request to your server? Only one `GET` is actually executed.
+- Full Route Cache: **At build time**, Next decides if your route is **static** or **dynamic**. If it is static, the page is rendered and the result is stored. In production, users are given this pre-rendered result.
 
 </details>
