@@ -293,4 +293,43 @@ Next implements caching in several locations. Can lead to unexpected behavior
 - Request Memoization: Make two or more `GET` requests with `fetch` during a user's request to your server? Only one `GET` is actually executed.
 - Full Route Cache: **At build time**, Next decides if your route is **static** or **dynamic**. If it is static, the page is rendered and the result is stored. In production, users are given this pre-rendered result.
 
+### 47. What Makes a Static or Dynamic Route
+
+```sh
+02-snippets % npm run build
+Route (app)                              Size     First Load JS
+┌ ○ /                                    175 B            94 kB
+├ ○ /_not-found                          875 B            88 kB
+├ ƒ /snippets/[id]                       175 B            94 kB
+├ ƒ /snippets/[id]/edit                  4.69 kB        91.8 kB
+└ ○ /snippets/new                        774 B          87.9 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/23-a783f3e56983d4ae.js        31.5 kB
+  ├ chunks/fd9d1056-be48aeae6e94b8d1.js  53.7 kB
+  └ other shared chunks (total)          1.88 kB
+```
+
+Not just a pretty bullet list.
+
+These indicate what Next thinks about your different routes.
+
+- `○`: Next thinks this route contains only static data. Next will render the page **NOW, ONE TIME** and give that version to everyone who visits your app
+- `ƒ`: Next thinks this route contains dynamic data. Next will render the page **whenever someone visits it**
+
+#### What makes a page "dynamic"?
+
+- Calling a `dynamic function` or referencing a `dynamic variable` when your route renders
+  - `cookies.set()`
+  - `cookies.delete()`
+  - `useSearchParams()`
+  - `searchParams prop`
+- Assigning specific `route segment config` options
+  - `export const dynamic = 'force-dynamic`
+  - `export const revalidate = 0`
+- Calling `fetch` and opting out of caching of the response
+  - `fetch('...', { next: { revalidate: 0 }})`
+- Using a dynamic route
+  - `/snippets/[id]/page.tsx`
+  - `/snippets/[id]/edit/page.tsx`
+
 </details>
