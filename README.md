@@ -11,6 +11,9 @@ Next JS: The Complete Developer's Guide by Stephen Grider
   - Section 3: Streaming Content with React Server Components
   - Section 4: Server Actions in Great Detail
   - Section 5: Server Forms with the UseFormState Hook
+  - Section 6: Understanding Next's Caching System
+- 03-auth
+  - Section 7: Authentication with Next-Auth
 
 # Details
 
@@ -369,5 +372,15 @@ It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
 > `npm run dev` doesn't use cache but it will be a little troublesome on the production with `npm run build` \
 > because of complicated caching
 > I should get used to Next js caching
+
+## Section 7: Authentication with Next-Auth
+
+### 53. Project Overview
+
+```sh
+% npx create-next-app@latest
+✔ What is your project named? … 03-discuss
+
+```
 
 </details>
