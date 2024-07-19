@@ -352,4 +352,22 @@ There are several ways to control caching
   - e.g: we don't know when data changes or when we expect the data to be different with every request
   - And the user still expects to see up to date data
 
+### 50. Enabling Caching with GenerateStaticParams
+
+Even if `/snippets/[id]` is a dynamic page, we want to generate all detail pages on build time
+
+### 51. Caching Dynamic Routes
+
+after adding `GenerateStaticParams` we won't get affected by `await new Promise((resolve) => setTimeout(resolve, 1000));`
+
+so the cached page will get displayed immediately.
+
+However, if we change the code, we won't see the changed code as it only shows the static(=cached) page.
+
+It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
+
+> `npm run dev` doesn't use cache but it will be a little troublesome on the production with `npm run build` \
+> because of complicated caching
+> I should get used to Next js caching
+
 </details>
