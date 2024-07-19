@@ -204,4 +204,10 @@ Special File Names in the 'app' Folder
 | error.tsx     | Displayed when an error occurs in a server component                               |
 | route.tsx     | Defineds API endpoints                                                             |
 
+### 34. Adding the Monaco Editor
+
+```sh
+02-snippets % npm install @monaco-editor/react
+```
+
 </details>
