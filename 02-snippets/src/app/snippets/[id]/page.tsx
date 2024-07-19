@@ -9,7 +9,7 @@ interface SnippetShowPageProps {
 
 export default async function SnippetShowPage(props: SnippetShowPageProps) {
   // Simulate a slow network request
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const snippet = await db.snippet.findFirst({
     where: {
