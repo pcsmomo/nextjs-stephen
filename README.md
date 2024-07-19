@@ -332,4 +332,24 @@ These indicate what Next thinks about your different routes.
   - `/snippets/[id]/page.tsx`
   - `/snippets/[id]/edit/page.tsx`
 
+### 48. When to Use Each Cache Control
+
+There are several ways to control caching
+
+- Time-Based: Every X seconds, ignore the cached response and fetch new data
+  - `export const revalidate = 3; // every 3 seconds`
+  - e.g: Front page of social media site
+  - e.g: Data is changing all the time - only get the top posts every 10-30 seconds
+- On-Demand: Forcibly purge a cached response
+  - ```js
+    import { revalidatePath } from 'next/cache';
+    revalidatePath(`/snippets`);
+    ```
+  - e.g: we know when data changes and the user expects to see up-to-date data
+- Disable Caching: Don't do any caching at all
+  - `export const revalidate = 0`
+  - `export const dynamic = 'force-dynamic`
+  - e.g: we don't know when data changes or when we expect the data to be different with every request
+  - And the user still expects to see up to date data
+
 </details>
