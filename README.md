@@ -5,7 +5,10 @@ Next JS: The Complete Developer's Guide by Stephen Grider
 ## Folder structures
 
 - 01-corp
-  - section 1
+  - Section 1: Get Started Here!
+- 02-snippets
+  - Section 2: Changing Data with Mutations
+  - Section 3: Streaming Content with React Server Components
 
 # Details
 
@@ -159,6 +162,8 @@ found 0 vulnerabilities
 3. Define a Server Action. This is a function that will be called when the form is submitted
 4. In the Server Action, validate the users input than create a new snippet
 5. Redirect the user to the Home Page, which lists all the snippets
+
+## Section 3: Streaming Content with React Server Components
 
 ### 24. Server Components vs Client Components
 
