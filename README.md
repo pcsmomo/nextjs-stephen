@@ -271,4 +271,15 @@ Error Handling with Server Actions
 
 `error.tsx` must be a client component
 
+## Section 6: Understanding Next's Caching System
+
+### 45. Super Unexpected Behavior
+
+```sh
+02-snippets % npm run build
+02-snippets % npm run start
+```
+
+Add a new snippet but after refreshing the new data doesn't appeal
+
 </details>
