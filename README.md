@@ -389,4 +389,14 @@ It will work fine after adding `` revalidatePath(`/snippets/${id}`); ``
 - Github OAuth
 - Prisma -> SQLite
 
+### 55. NextUI Installation and Setup
+
+```sh
+# In order to avoid errors we need to install a specific version of nextui-org/react
+# npm install --save-exact @nextui-org/react@2.2.9 framer-motion
+
+# I'd use the latest one to see what error comes up
+npm install @nextui-org/react framer-motion
+```
+
 </details>
