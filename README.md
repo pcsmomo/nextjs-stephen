@@ -491,4 +491,24 @@ import { SessionProvider } from 'next-auth/react';
 import { useSession } from 'next-auth/react';
 ```
 
+### 63. Upfront Design Process
+
+Recommended Initial Design
+
+1. Identify all the different routes you want your app to have + the data that each shows
+2. Make `path helper` functions
+3. Create your routing folder + page.tsx files based on step #1
+4. Identify the places where data changes in your app
+5. Make empty server actions for each of those
+6. Add in comments on what paths you'll need to revalidate for each server action
+
+#### 1. Identify all the different routes
+
+| Page Name     | Path                         | Data shown                       |
+| ------------- | ---------------------------- | -------------------------------- |
+| Home page     | /                            | Many posts, many topics          |
+| Topic Show    | /topic/[slug]                | A single and many posts          |
+| Create a post | /topic/[slug]/posts/new      | A single topic and many posts    |
+| Show a post   | /topic/[slug]/posts/[postId] | A single post and many ccomments |
+
 </details>
