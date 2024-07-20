@@ -511,4 +511,12 @@ Recommended Initial Design
 | Create a post | /topic/[slug]/posts/new      | A single topic and many posts    |
 | Show a post   | /topic/[slug]/posts/[postId] | A single post and many ccomments |
 
+### 64. Why Path Helpers?
+
+for when path or folder name changes, we want to avoid visiting all the page to change the changed string
+
+### 65. Path Helper Implementation
+
+#### 2. Make `path helper` functions
+
 </details>
