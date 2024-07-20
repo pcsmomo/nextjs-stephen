@@ -482,4 +482,13 @@ npm install --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@
 
 #### 6. Make server actions to signin/signout the user
 
+### 62. Sign In, Sign out, and Checking Auth Status
+
+SessionProvider is based on React Context, so we could use session in any component
+
+```sh
+import { SessionProvider } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
+```
+
 </details>
