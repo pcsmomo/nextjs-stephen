@@ -478,4 +478,8 @@ npm install --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@
 
 ![Auth workflow](./resources/auth.png)
 
+### 61. Wrapping Auth in Server Actions
+
+#### 6. Make server actions to signin/signout the user
+
 </details>
