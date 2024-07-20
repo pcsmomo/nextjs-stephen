@@ -472,4 +472,10 @@ npm install --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@
 
 #### 4. `./src/auth.ts`
 
+### 60. The Theory Behind OAuth
+
+#### 5. Set up the `app/api/auth/[...nextauth]/route.ts`
+
+![Auth workflow](./resources/auth.png)
+
 </details>
