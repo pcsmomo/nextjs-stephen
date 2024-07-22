@@ -1,3 +1,5 @@
+'use client';
+
 import {
   NavbarItem,
   Button,
@@ -6,11 +8,11 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from '@nextui-org/react';
-import { auth } from '@/auth';
+import { useSession } from 'next-auth/react';
 import * as actions from '@/actions';
 
-export default async function HeaderAuth() {
-  const session = await auth();
+export default function HeaderAuth() {
+  const { data: session } = useSession();
 
   let authContent: React.ReactNode;
   if (session?.user) {
