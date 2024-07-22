@@ -519,4 +519,28 @@ for when path or folder name changes, we want to avoid visiting all the page to 
 
 #### 2. Make `path helper` functions
 
+### 72. More Caching Issues
+
+```sh
+03-discuss % npm run build
+Route (app)                              Size     First Load JS
+┌ ƒ /                                    147 B          87.4 kB
+├ ƒ /_not-found                          879 B          88.2 kB
+├ ƒ /api/auth/[...nextauth]              0 B                0 B
+├ ƒ /topics/[slug]                       147 B          87.4 kB
+├ ƒ /topics/[slug]/posts/[postId]        147 B          87.4 kB
+└ ƒ /topics/[slug]/posts/new             147 B          87.4 kB
++ First Load JS shared by all            87.3 kB
+  ├ chunks/23-61c3d3b8d2d8eee4.js        31.7 kB
+  ├ chunks/fd9d1056-f518bdc60ef95b2d.js  53.7 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+ƒ  (Dynamic)  server-rendered on demand
+```
+
+Even the root home page is dynamic, in spite of it is pure simple page expected to be static
+
+Because of the header in layout is using cookies in `session`
+
 </details>
