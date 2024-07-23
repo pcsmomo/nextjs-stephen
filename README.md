@@ -549,4 +549,25 @@ Because of the header in layout is using cookies in `session`
 npm install zod
 ```
 
+### 80. Fixing UseFormState Type Errors
+
+```ts
+// create-topic.ts
+export async function createTopic(formData: FormData) {}
+
+// topic-create-form.tsx
+<form action={actions.ccreateTopic}>
+```
+
+⬇️
+
+```ts
+// create-topic.ts
+export async function createTopic(formState:number, formData: FormData) {}
+
+// topic-create-form.tsx
+const [formState, action] = useFormState<number, FormData>(actions.createTopic, 5);
+<form action={acction}>
+```
+
 </details>
