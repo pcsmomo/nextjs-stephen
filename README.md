@@ -543,4 +543,10 @@ Even the root home page is dynamic, in spite of it is pure simple page expected 
 
 Because of the header in layout is using cookies in `session`
 
+### 78. Adding Form Validation with Zod
+
+```sh
+npm install zod
+```
+
 </details>
