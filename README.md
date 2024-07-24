@@ -573,4 +573,18 @@ const [formState, action] = useFormState<number, FormData>(actions.createTopic, 
 
 ## Section 8: Using Data - Database Queries
 
+### 91. Passing Additional Args to a Server Action
+
+```js
+const action = actions.createPost.bind(null, slug);
+```
+
+But we use `useFormState` so
+
+```js
+const [formState, action] = useFormState(actions.createPost.bind(null, slug), {
+  errors: {},
+});
+```
+
 </details>
