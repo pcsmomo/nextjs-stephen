@@ -48,7 +48,7 @@ export default function PostCreateForm() {
               </div>
             )}
 
-            <FormButton>Create a Post</FormButton>
+            <FormButton>Create Post</FormButton>
           </div>
         </form>
       </PopoverContent>

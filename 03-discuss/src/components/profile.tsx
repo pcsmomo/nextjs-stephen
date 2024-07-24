@@ -9,5 +9,5 @@ export default function Profile() {
     return <div>From client: {JSON.stringify(session.data.user)}</div>;
   }
 
-  return <div>From client: user is NOT signed</div>;
+  return <div>From client: user is NOT signed in</div>;
 }
