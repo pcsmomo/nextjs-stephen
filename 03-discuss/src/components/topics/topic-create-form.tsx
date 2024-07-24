@@ -9,6 +9,8 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from '@nextui-org/react';
+import FormButton from '@/components/common/form-button';
+
 import * as actions from '@/actions';
 
 export default function TopicCreateForm() {
@@ -48,7 +50,7 @@ export default function TopicCreateForm() {
               </div>
             ) : null}
 
-            <Button type="submit">Submit</Button>
+            <FormButton>Save</FormButton>
           </div>
         </form>
       </PopoverContent>

@@ -14,6 +14,7 @@ Next JS: The Complete Developer's Guide by Stephen Grider
   - Section 6: Understanding Next's Caching System
 - 03-auth
   - Section 7: Authentication with Next-Auth
+  - Section 8: Using Data - Database Queries
 
 # Details
 
@@ -569,5 +570,7 @@ export async function createTopic(formState:number, formData: FormData) {}
 const [formState, action] = useFormState<number, FormData>(actions.createTopic, 5);
 <form action={acction}>
 ```
+
+## Section 8: Using Data - Database Queries
 
 </details>
