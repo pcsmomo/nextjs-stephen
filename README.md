@@ -587,4 +587,24 @@ const [formState, action] = useFormState(actions.createPost.bind(null, slug), {
 });
 ```
 
+### 95. Considerations Around Where to Fetch Data
+
+- Option #1. Page component gets data, passes it to child
+
+  - Typing can be complicated
+
+    ```ts
+    {
+      posts: Post &
+        {
+          topic: { slug: string },
+          _count: { comments: number },
+        };
+    }
+    ```
+
+- Option #2. Child component fetches its own data
+  - not reusable
+- Option #1.5
+
 </details>
