@@ -607,4 +607,18 @@ const [formState, action] = useFormState(actions.createPost.bind(null, slug), {
   - not reusable
 - Option #1.5
 
+## Section 9: Caching with Request Memoization
+
+### 105. Introducing Duplicate Queries
+
+Node server is fetching duplicated queries at this point
+
+```sh
+Making a query
+Making a query
+Making a query
+Making a query
+Making a query
+```
+
 </details>
