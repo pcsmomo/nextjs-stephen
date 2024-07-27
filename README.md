@@ -15,6 +15,7 @@ Next JS: The Complete Developer's Guide by Stephen Grider
 - 03-auth
   - Section 7: Authentication with Next-Auth
   - Section 8: Using Data - Database Queries
+  - Section 9: Caching with Request Memoization
 
 # Details
 
@@ -626,5 +627,15 @@ Making a query
 1. The cache memoization system is cleared out between incoming requests
 2. Automatically used with the built-in `fetch` function
 3. Can be used with other functions (like db queries) by using the `cache` function
+
+### 107. Deduplicating Requests with Cache
+
+[React Cache](https://react.dev/reference/react/cache)
+
+After applying `cache`
+
+```sh
+Making a query
+```
 
 </details>
