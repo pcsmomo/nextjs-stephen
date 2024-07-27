@@ -639,4 +639,11 @@ After applying `cache`
 Making a query
 ```
 
+### 113. Notes on QueryStrings in Next
+
+- Page components receive the query string data through the `searchParams` prop
+  - Pages that reference `searchParams` will be marked as `dynamic` for purposes of build time caching
+- Client components can get query string data with `useSearchParams`
+  - ⚠️ Client component with `useSearchParams` need to be wrapped with `Suspense` or you'll get a strange warning at build time
+
 </details>
