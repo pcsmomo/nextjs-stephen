@@ -646,4 +646,71 @@ Making a query
 - Client components can get query string data with `useSearchParams`
   - ⚠️ Client component with `useSearchParams` need to be wrapped with `Suspense` or you'll get a strange warning at build time
 
+### 118. The De-Opt to Client Side Rendering Warning
+
+Wihtout `Suspense` wrapping up, we get the warning messages
+
+```sh
+03-discuss % npm run build
+
+# > 03-discuss@0.1.0 build
+# > next build
+
+#   ▲ Next.js 14.2.5
+#   - Environments: .env.local, .env
+
+#    Creating an optimized production build ...
+#  ✓ Compiled successfully
+#  ✓ Linting and checking validity of types
+#  ✓ Collecting page data
+#    Generating static pages (0/6)  [    ] ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/search". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+#     at i (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/814.js:1:13512)
+#     at d (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/814.js:1:24509)
+#     at d (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/145.js:1:4868)
+#     at nj (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:46251)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47571)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:61546)
+#     at nN (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64546)
+#     at nB (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:67538)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:58560)
+#     at nN (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64546)
+
+# Error occurred prerendering page "/search". Read more: https://nextjs.org/docs/messages/prerender-error
+
+#  ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/404". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+#     at i (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/814.js:1:13512)
+#     at d (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/814.js:1:24509)
+#     at d (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/145.js:1:4868)
+#     at nj (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:46251)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47571)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:61546)
+#     at nN (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64546)
+#     at nB (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:67538)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:58560)
+#     at nN (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64546)
+
+# Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+
+#  ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+#     at i (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/814.js:1:13512)
+#     at d (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/814.js:1:24509)
+#     at d (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/.next/server/chunks/145.js:1:4868)
+#     at nj (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:46251)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:47571)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:61546)
+#     at nN (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64546)
+#     at nB (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:67538)
+#     at nM (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:58560)
+#     at nN (/Users/noah/Documents/study/study_codes/udemy/nextjs-stephen/nextjs-stephen-git/03-discuss/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:64546)
+
+# Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+
+#  ✓ Generating static pages (6/6)
+
+# > Export encountered errors on following paths:
+# 	/_not-found/page: /_not-found
+# 	/page: /
+# 	/search/page: /search
+```
+
 </details>
