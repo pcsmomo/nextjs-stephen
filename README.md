@@ -621,4 +621,10 @@ Making a query
 Making a query
 ```
 
+### 106. Request Memoization
+
+1. The cache memoization system is cleared out between incoming requests
+2. Automatically used with the built-in `fetch` function
+3. Can be used with other functions (like db queries) by using the `cache` function
+
 </details>
