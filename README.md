@@ -16,6 +16,7 @@ Next JS: The Complete Developer's Guide by Stephen Grider
   - Section 7: Authentication with Next-Auth
   - Section 8: Using Data - Database Queries
   - Section 9: Caching with Request Memoization
+  - Section 10: Implementing Search Functionality
 
 # Details
 
